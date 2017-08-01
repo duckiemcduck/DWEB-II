@@ -25,11 +25,11 @@
                 $j=0;
                 for($i=0; $i<$numeroListas; $i++)
                 {
-                    echo "<h2>Lista", $i+1, "</h2>";
+                    echo "<h2>Lista ", $i+1, "</h2>";
                     echo "<ul>";
                     for($j=1; $j<$tamanhoLista[$i]; $j++)
                     {
-                        echo "<li><a href=",'"',$caminhoLista,'/',$i+1,'/',$j,'"',">", "$j</a></li>";
+                        echo "<li><a href=",'"',$caminhoLista,'/',$i+1,'/',$j,'"',">", "Exercício $j</a></li>";
                     }
                     echo "</ul>";
                 }
