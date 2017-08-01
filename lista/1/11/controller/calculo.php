@@ -14,8 +14,10 @@
                     $peso1 = $_POST["peso1"];
                     $peso2 = $_POST["peso1"];
                     $nome = $_POST["nome"];
+                    $media = ($nota1*$peso1+$nota2*$peso2)/($peso1+$peso2);
                     echo "Nota de $nome:";
-                    echo "<p>",($nota1*$peso1+$nota2*$peso2)/($peso1+$peso2),"</p>";
+                    echo "<p>",$media,"</p>";
+                    echo ($media > 6.00) ? "Aprovado :)" : "Reprovado :(";
                 ?>
         </div>
 </html>
