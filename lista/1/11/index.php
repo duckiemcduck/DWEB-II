@@ -20,7 +20,7 @@
                         <div id=inputs>
                             <input type="number" step="0.1" min="0" max="10" name="nota1">
                             <input type="number" step="0.1" min="0" max="10" name="nota2">
-                            <input type="string" name="nome">
+                            <input type="text" name="nome">
                         </div>
                          <div id=labels>
                             <label class="alinhar"> Peso 1:</label>
