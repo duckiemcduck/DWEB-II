@@ -9,7 +9,7 @@
         <ul>
             <?php 
                     $links=[
-                    "Listas" => "./lista"];
+                    "Index de Listas" => "./lista"];
                     foreach($links as $index => $link)
                     {
                         echo "<li><a href=$link>$index</a></li>";
@@ -21,11 +21,12 @@
                 $numeroListas=3;
                 $tamanhoLista=[17,10,7];
                 $caminhoLista="./lista";
+                $caminhoPdf="./pdf";
                 $i=0;
                 $j=0;
                 for($i=0; $i<$numeroListas; $i++)
                 {
-                    echo "<h2>Lista ", $i+1, "</h2>";
+                    echo "<h2><a href=",'"',$caminhoPdf,'/',$i+1,'">',"Lista ", $i+1, "</a></h2>";
                     echo "<ul>";
                     for($j=1; $j<$tamanhoLista[$i]; $j++)
                     {
