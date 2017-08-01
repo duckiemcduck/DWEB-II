@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="../../stylesheets/9.css">        
     </head>
     <body>
-        <h1> Exercício 9 - Formulários e Matemática com PHP </h1> 
+        <h1> Exercício 11 - Média Aritmética de Formulário PHP </h1> 
         <div id="container-conteudo" class="resultado">
                 <?php
                     $nota1 = $_POST["nota1"];
