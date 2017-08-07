@@ -10,14 +10,19 @@
         <div id="container-conteudo" class="resultado">
                 
                 <?php
-                    $distancia = $_POST["distancia"];
-                    $consumo = $_POST["consumo"];
-                    $preco = $_POST["preco"];
-                    $resultado = $distancia*(1/$consumo)*($preco);
-                    echo "Você irá gastar:";
-                    echo "<p>R$",number_format($resultado, 2, ',', ' '),"</p>";
-                    //referencia number_format:
-                    //http://php.net/manual/pt_BR/function.number-format.php
+		    if (strlen($_POST["distancia"])==0)
+			echo "deu ruim";
+		    else
+		    {
+		            $distancia = $_POST["distancia"];
+		            $consumo = $_POST["consumo"];
+		            $preco = $_POST["preco"];
+		            $resultado = $distancia*(1/$consumo)*($preco);
+		            echo "Você irá gastar:";
+		            echo "<p>R$",number_format($resultado, 2, ',', ' '),"</p>";
+		            //referencia number_format:
+		            //http://php.net/manual/pt_BR/function.number-format.php
+		    }
                 ?>
         </div>
 </html>
