@@ -28,7 +28,7 @@
                 {
                     echo "<h2><a href=",'"',$caminhoPdf,'/',$i+1,'">',"Lista ", $i+1, "</a></h2>";
                     echo "<ul>";
-                    for($j=1; $j<$tamanhoLista[$i]; $j++)
+                    for($j=1; $j<$tamanhoLista[$i]+1; $j++)
                     {
                         echo "<li><a href=",'"',$caminhoLista,'/',$i+1,'/',$j,'"',">", "Exercício $j</a></li>";
                     }
