@@ -4,9 +4,19 @@
     flex-direction: column;
     text-align: justify;
 }
+.cabecalho
+{
+	text-align: center;
+}
 #tabela
 {
     display:flex;
+}
+#container
+{
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
 }
 form
 {

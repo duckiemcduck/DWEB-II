@@ -10,10 +10,27 @@
         <div id="container-conteudo">
             <form action="#" method="get">
                 <fieldset>
-                    <legend> Cálculo comissão </legend>
+                    <legend> Cálculo Populacional </legend>
                     <div id="tabela">
 
 			    <?php
+				function imprimirArray($array)
+				{
+					echo "<div id=container>";
+							echo "<div id=labels >";
+							foreach($array as $index => $valor)					
+							{
+								echo '<label class=alinhar>',$index,"</label>";
+							}
+							echo "</div>";
+							echo "<div id=labels >";
+							foreach($array as $index => $valor)					
+							{
+								echo '<label class=alinhar>', number_format($valor,"0",",","."),"</label>";
+							}
+							echo "</div>";
+					echo "</div>";
+				}
 				$GLOBALS['capitais'] =
 				[
 					"Porto Alegre" => 1420766,
@@ -34,6 +51,7 @@
 						foreach($GLOBALS['capitais'] as $index => $valor)					
 						{
 							echo '<option value="',$index,'"','>',$index,"</option>";
+							//option seleected
 						}
 		     			    ?>	
 				        </select> 
@@ -45,12 +63,13 @@
                 <button id="botao-enviar" type="submit" name="botao" value=1> Ver População </button>
 		<button id="botao-enviar" type="submit" name="botao" value=2> Calcular Média Populacional </button>
 		<button id="botao-enviar" type="submit" name="botao" value=3> Ordenar Número de habitantes </button>
-		<button id="botao-enviar" type="submit" name="botao" value=4>  Capital Mais Populosa </button>
+		<button id="botao-enviar" type="submit" name="botao" value=4> Ordenar Por Capital </button>
+		<button id="botao-enviar" type="submit" name="botao" value=5>  Capital Mais Populosa </button>
 </div>
             </form>
 	<p>
 		<?php
-			$botao=1;
+			$botao=0;
 			if(strlen($_GET["botao"]!=0))
 			{
 				$botao=$_GET["botao"];
@@ -58,7 +77,22 @@
 			switch($botao)
 			{
 				case 1:
-					echo "Populacao:", $GLOBALS['capitais'][$_GET["operacao"]];
+					echo "Populacao:<br>", number_format($GLOBALS['capitais'][$_GET["operacao"]],'0',',','.');
+					break;
+				case 2:
+					echo "Media:<br>", number_format(array_sum($GLOBALS['capitais'])/count($GLOBALS['capitais']),'0',',','.');
+					break;
+				case 3:
+					arsort($GLOBALS['capitais']);
+					imprimirArray($GLOBALS['capitais']);
+					break;
+				case 4:
+					ksort($GLOBALS['capitais']);
+					imprimirArray($GLOBALS['capitais']);
+					break;
+				case 5:
+					arsort($GLOBALS['capitais']);
+					echo "Mais populosa: <br>", key($GLOBALS['capitais']);
 					break;
 				default: 
 					echo "Aperte um botão";
