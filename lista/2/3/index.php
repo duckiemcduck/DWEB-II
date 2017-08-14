@@ -15,7 +15,7 @@
 				<div id=labels>
 					<label class="cabecalho"> Funcionário </label>
 					<?php
-						$numFuncionarios=4;
+						$numFuncionarios=100;
 						for($i=0; $i<$numFuncionarios; $i++)
 							echo "<label class='alinhar'>Funcionario ", $i+1, ":</label>"
 					?>
@@ -24,7 +24,7 @@
 					<label class="cabecalho"> Nome </label>
 					<?php
 						for($i=0; $i<$numFuncionarios; $i++)
-							echo '<input type="text" name="nomeFun',$i,'">'
+							echo '<input value="', isset($_GET["nomeFun$i"]) ? $_GET["nomeFun$i"] : "N/A"  ,'"type="text" name="nomeFun',$i,'">'
 					?>
 				</div>
 
@@ -40,7 +40,7 @@
 					<label class="cabecalho"> Salario </label>
 					<?php
 						for($i=0; $i<$numFuncionarios; $i++)
-							echo '<input type="number" step="0.01" min="0" name="salFun',$i,'">'
+							echo '<input value="', isset($_GET["salFun$i"]) ? $_GET["salFun$i"] : "0"  ,'" type="number" step="0.01" min="0" name="salFun',$i,'">'
 					?>
 				</div>
                         </div>
@@ -67,8 +67,8 @@
 			{
 				foreach($array as $index => $valorArray)
 				{
-					if($valorArray<$valor)
-						echo "$index: Salário R$", number_format($valorArray,"2",",",'.') ,"<br>";
+						if((float)$valorArray<$valor)
+							echo "$index: Salário R$", number_format((float)$valorArray,"2",",",'.') ,"<br>";
 				}				
 			}
 			switch($botao)

@@ -50,7 +50,7 @@
 				            <?php
 						foreach($GLOBALS['capitais'] as $index => $valor)					
 						{
-							echo '<option value="',$index,'"','>',$index,"</option>";
+							echo '<option value="',$index,'"',$index==$_GET['operacao'] ? 'selected' : '','>',$index,"</option>";
 							//option seleected
 						}
 		     			    ?>	
