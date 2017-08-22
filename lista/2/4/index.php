@@ -3,54 +3,49 @@
     <head>
         <title> Fundamentos da Linguagem PHP </title>
         <link rel="stylesheet" href="../stylesheets/global.css">        
-		<link rel="stylesheet" href="../stylesheets/1.css">        
+		<link rel="stylesheet" href="../stylesheets/2.css">        
     </head>
     <body>
-        <h1> Exercício 1 - Ordenando tabela</h1>     
+        <h1> Exercício 4 - Ordenando tabela</h1>     
         <div id="container-conteudo">
-            <form action="#" method="get">
                 <fieldset>
-                    <legend> Cálculo Populacional </legend>
+                    <legend> Display Produtos </legend>
                     <div id="tabela">
-				<div id=labels>
-					<label class="cabecalho"> Funcionários </label>
-					<textarea name="nomes" value="">teste</textarea>
-				</div>
-				<div id=inputs>
-					<label class="cabecalho"> Salário </label>
-					<textarea name="salario"></textarea>
-				</div>
-			
+
+                        <?php
+                        $produtos =
+                        [
+                            "Windows 8 Pro –versão completa" => 650,
+                            "Windows 7 Ultimate Edition" => 275.32,
+                            "Linux Mageia" => 0,
+                            "Microsoft Office Professional 2013" => 980.56,
+                            "ESED NOD32 6.0 - licença de um ano" => 80.13
+                        ];
+                        //echo "<pre>", print_r($GLOBALS) , "</pre>";
+                        ?>
+                        <div id=labels>
+                            Produto:
+                            <?php
+                            foreach($produtos as $index => $valor)					
+                            {
+                                echo '<label>',$index," </label>";
+                                //option seleected
+                            }
+                            ?>	
+                        </div>
+                        <div id=labels>
+                            Preço:
+                            <?php
+                            foreach($produtos as $index => $valor)					
+                            {
+                                echo '<label> R$',number_format($valor, 2, ',', '.'),"</label>";
+                                //option seleected
+                            }
+                            ?>	
+                        </div>
+                        
                 </fieldset>
-		<div id="botoes">
-                	<button id="botao-enviar" type="submit" name="botao" value=1> Ver Miseráveis </button>
-		</div>
-            </form>
-	<p>
-		<?php
-            if(isset($_GET["nomes"]))
-            {
-                $funcionarios = explode(",", $_GET["nomes"]);
-                foreach($funcionarios as $index => $nome)
-                {
-                    echo $nome,"\n";
-                }
-            }
-            if(isset($_GET["salario"]))
-            {
-                $salarios = explode(",", $_GET["salario"]);
-                foreach($salarios as $index => $valor)
-                {
-                    echo $valor,"\n";
-                }
-            }
-			$botao=0;
-			if(strlen($_GET["botao"]!=0))
-			{
-				$botao=$_GET["botao"];
-			}
-		?>
-	</p>
         </div>
     </body>
 </html>
+
