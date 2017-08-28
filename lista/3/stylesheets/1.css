@@ -51,6 +51,12 @@ input[type="number"]:focus
 {
     box-shadow: 5px 5px 1px rgba(0,0,0,0.1)
 }
+
+input
+{
+    margin:5px;
+    height: 19px;
+}
 #botoes
 {
 	display: flex;
