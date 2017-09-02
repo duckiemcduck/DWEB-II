@@ -12,6 +12,10 @@
 {
     display:flex;
 }
+textarea
+{
+    resize: none;
+}
 #container
 {
 	display:flex;

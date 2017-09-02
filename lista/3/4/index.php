@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="../stylesheets/1.css">        
     </head>
     <body>
-        <h1> Exercício 4 - Print foreach()</h1>     
+        <h1> Exercício 4 - Alocar Posicoes</h1>     
         <div id="container-conteudo">
             <form action="#" method="get">
                 <?php
@@ -90,7 +90,7 @@
                   
 			    ?>
                 <fieldset>
-                    <legend> Loja </legend>
+                    <legend> Assentos </legend>
                     <div id="tabela">
                         <div id="labels">
                             <label class="alinhar">&nbsp</label>
