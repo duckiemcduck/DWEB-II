@@ -18,8 +18,8 @@
 
             ?>
             <?php
-                $numeroListas=3;
-                $tamanhoLista=[17,10,7];
+                $numeroListas=4;
+                $tamanhoLista=[17,10,7,11];
                 $caminhoLista="./lista";
                 $caminhoPdf="./pdf";
                 $i=0;
