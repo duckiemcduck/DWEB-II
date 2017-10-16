@@ -1,0 +1,18 @@
+version: '2'
+services:
+ apache:
+  build: ./
+  image: php-mysqli:tag
+  volumes:
+   - ./:/var/www/html/
+  ports:
+   - 8080:80
+ mariadb:
+  image: mariadb:10.3.0
+  environment:
+   - MYSQL_ROOT_HOST=%
+   - MYSQL_ROOT_PASSWORD=admin
+   - MYSQL_USER=admin
+   - MYSQL_PASSWORD=admin
+  volumes:
+   - ./MariaDB_Files:/var/lib/mysql

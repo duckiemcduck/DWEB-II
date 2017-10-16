@@ -51,7 +51,7 @@
 						foreach($GLOBALS['capitais'] as $index => $valor)					
 						{
 							echo '<option value="',$index,'"',$index==$_GET['operacao'] ? 'selected' : '','>',$index,"</option>";
-							//option seleected
+							//option selected
 						}
 		     			    ?>	
 				        </select> 
@@ -60,11 +60,11 @@
                     </div>
                 </fieldset>
 <div id="botoes">
-                <button id="botao-enviar" type="submit" name="botao" value=1> Ver População </button>
-		<button id="botao-enviar" type="submit" name="botao" value=2> Calcular Média Populacional </button>
-		<button id="botao-enviar" type="submit" name="botao" value=3> Ordenar Número de habitantes </button>
-		<button id="botao-enviar" type="submit" name="botao" value=4> Ordenar Por Capital </button>
-		<button id="botao-enviar" type="submit" name="botao" value=5>  Capital Mais Populosa </button>
+                <button id="botao-enviar" type="submit" class="alinhar" name="botao" value=1> Ver População </button>
+		<button id="botao-enviar" type="submit" class="alinhar" name="botao" value=2> Calcular Média Populacional </button>
+		<button id="botao-enviar" type="submit" class="alinhar" name="botao" value=3> Ordenar Número de habitantes </button>
+		<button id="botao-enviar" type="submit" class="alinhar" name="botao" value=4> Ordenar Por Capital </button>
+		<button id="botao-enviar" type="submit" class="alinhar" name="botao" value=5>  Capital Mais Populosa </button>
 </div>
             </form>
 	<p>
