@@ -15,6 +15,7 @@
             <div id=labels>
                 <label class="alinhar"> Produto: </label>
                 <label class="alinhar"> Preço: </label>
+                <label class="alinhar"> Operação: </label>
             </div>
             <div id=inputs>
                 <input type="text" name="nome" class="maior" autofocus> 
@@ -45,6 +46,8 @@
                 switch($_POST["operacoes"])
                 {
                     case 1: $projeto->cadastrar($_POST['nome'], $_POST['preco']);
+                            break;
+                    case 2: $projeto->retornarMedia();
                             break;
                     default: echo "Nao implementado";
                 }

@@ -20,14 +20,39 @@
             echo "cadastro realizado";
             
         }
-
+        public function paraReal($valor)
+        {
+            return "R$" . number_format($valor, 2, ',', '.');
+        }
+        public function retornarMedia()
+        {
+            $tabela = static::$nomeDaTabela;
+            $sql = "WITH media as (SELECT AVG(valor) as valor FROM $tabela)
+                    SELECT $tabela.*, media.valor as media FROM $tabela INNER JOIN media ON media.valor < $tabela.valor";
+            $resultado = static::$conexao->query($sql) or die (static::$conexao->error);
+            $dados = $resultado->fetch_all();
+            if(empty($dados))
+            {
+               echo "Não há dados para média";
+               return;
+            }
+            echo "<div class='resultados'>";
+            echo "<div>Media :", self::paraReal($dados[0][2]), "</div>";
+            echo "<div>Produtos acima da média:</div>";
+            foreach($dados as $index => $row)
+            {
+                echo "<div>Produto: ", $row[0], " | Valor: ", self::paraReal($row[1]),"</div>";
+                
+            }
+            echo "</div>";
+        }
         public function criarTabela()
         {
             $tabela = static::$nomeDaTabela;
             $sql = "CREATE TABLE IF NOT EXISTS $tabela
             (
                 Produto VARCHAR(20) PRIMARY KEY,
-                valor DECIMAL(3,2)
+                valor DECIMAL(8,2)
             )";
             $resultado = static::$conexao->query($sql) or die(static::$conexao->error);
             return $resultado;
