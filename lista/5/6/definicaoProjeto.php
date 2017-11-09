@@ -77,7 +77,6 @@
             $resultado = static::$conexao->query($sql) or die(static::$conexao->error);
             return $resultado;
         }
-
         public function conectar()
         {
 
