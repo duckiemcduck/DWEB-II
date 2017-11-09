@@ -11,7 +11,7 @@
         <fieldset>
         <legend> Exercício 1 - Dados do Aluno </legend>
         <div id="tabela">
-            
+             
             <div id=labels>
                 <label class="alinhar"> Matricula: </label>
                 <label class="alinhar"> Nome: </label>
